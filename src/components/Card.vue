@@ -1,6 +1,6 @@
 <template>
     <div class="grid" :style="{'background-color': bgColor, 'grid-area': gArea}">
-
+        <slot></slot>
     </div>
 </template>
 
