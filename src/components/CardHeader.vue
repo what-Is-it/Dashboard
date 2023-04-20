@@ -1,24 +1,18 @@
 <template>
-    <div class="grid" :style="{'background-color': bgColor, 'grid-area': gArea}">
-        <CardHeader :percent="percent" :title="title" :subTitle="subTitle"/>
-        <slot></slot>
+    <div class="card-header">
+        <div class="card-header__title">
+            <h3>{{title}}</h3>
+            <h5>{{subTitle}}</h5>
+        </div>
+        <h5 class="card-header__percent">{{percent}}</h5>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import CardHeader from './CardHeader.vue'
 
 export default defineComponent({
     props: {
-        bgColor: {
-            type: String,
-            required: false,
-        },
-        gArea: {
-            type: String,
-            required: true
-        },
         title: {
             type: String,
             required: false,
@@ -32,12 +26,11 @@ export default defineComponent({
             required: false
         }
     },
-    setup (props) {
+    setup () {
         
 
         return {}
-    },
-    components: {CardHeader}
+    }
 })
 </script>
 

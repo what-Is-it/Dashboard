@@ -4,8 +4,6 @@ import axios from 'axios'
 import {AxiosResponse} from 'axios'
 import {
     GetFinanceResponse,
-    GetProductsResponse,
-    GetTransactionsResponse,
   } from "./types";
 
 export const useFinanceStore = defineStore('finance', {
@@ -35,14 +33,20 @@ export const useFinanceStore = defineStore('finance', {
                 }
             })
         },
-        months():String[] {
-            return this.finance[0].monthlyData.map((el)=>el.month)
+        months():string[] {
+            return this.finance[0].monthlyData.map((el)=>el.month.substring(0,3))
         },
-        expenses():Number[] {
+        expenses():number[] {
             return this.finance[0].monthlyData.map((el)=>el.expenses)
         },
-        revenue():Number[] {
+        revenue():number[] {
             return this.finance[0].monthlyData.map((el)=>el.revenue)
+        },
+        operationalExpenses():number[] {
+            return this.finance[0].monthlyData.map((el)=>el.operationalExpenses)
+        },
+        nonOperationalExpenses():number[] {
+            return this.finance[0].monthlyData.map((el)=>el.nonOperationalExpenses)
         }
     }
 })

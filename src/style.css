@@ -32,6 +32,21 @@ body {
 h1 {
   font-size: 16px;
 }
+h3 {
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.671)
+}
+h5 {
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.233);
+}
+h6 {
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.479);
+}
 
 .navbar {
   height: 100%;
@@ -95,6 +110,16 @@ h1 {
 .dashboard {
   margin: 25px;
 }
+.pie-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 15px;
+  text-align: center;
+  align-items: center;
+}
+.pie-container>div:last-child {
+  text-align: left;
+}
 
 @media (width<1200px) {
   .container {
@@ -135,3 +160,19 @@ h1 {
     ;
   }
 }
+
+.card-header {
+  margin: 1rem 1rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-header__percent {
+  color: rgba(230, 190, 59, 0.692);
+}
+
+/* canvas {
+  max-height: 180px;
+  max-width: 320px;
+} */
+
